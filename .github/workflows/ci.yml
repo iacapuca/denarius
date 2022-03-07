@@ -4,7 +4,6 @@ on: push
 
 env:
   MIX_ENV: test
-  POSTGRES_HOST: postgres
 
 jobs:
   test:
@@ -35,27 +34,8 @@ jobs:
         with:
           otp-version: ${{matrix.otp-version}}
           elixir-version: ${{matrix.elixir-version}}
-        env:
-          POSTGRES_HOST: postgres
-          POSTGRES_PORT: 5432
-          POSTGRES_PASSWORD: denarius
-          POSTGRES_USER: denarius
-          POSTGRES_DATABASE: denarius_test
-          MIX_ENV: test
 
       - run: mix deps.get
       - run: mix ecto.create
-        env:
-          POSTGRES_HOST: postgres
-          POSTGRES_PORT: 5432
-          POSTGRES_PASSWORD: denarius
-          POSTGRES_USER: denarius
-          POSTGRES_DATABASE: denarius_test
-          MIX_ENV: test
       - run: mix ecto.migrate
-        env:
-          MIX_ENV: test
-          POSTGRES_HOST: postgres
       - run: mix test
-        env:
-          MIX_ENV: test
