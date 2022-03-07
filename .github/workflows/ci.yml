@@ -1,19 +1,24 @@
-name: CI
+name: Denarius CI
 
 on: push
 
+env:
+  MIX_ENV: test
+  POSTGRES_HOST: postgres
+
 jobs:
   test:
+    name: Build and test
     runs-on: ubuntu-latest
 
     services:
       postgres:
-        image: postgres
+        image: postgres:13
         env:
           POSTGRES_PASSWORD: denarius
           POSTGRES_USER: denarius
-        ports:
-          - 5432:5432
+          POSTGRES_DB: denarius_test
+        ports: ["5432:5432"]
         options: >-
           --health-cmd pg_isready
           --health-interval 10s
@@ -41,8 +46,12 @@ jobs:
       - run: mix deps.get
       - run: mix ecto.create
         env:
-          MIX_ENV: test
           POSTGRES_HOST: postgres
+          POSTGRES_PORT: 5432
+          POSTGRES_PASSWORD: denarius
+          POSTGRES_USER: denarius
+          POSTGRES_DATABASE: denarius_test
+          MIX_ENV: test
       - run: mix ecto.migrate
         env:
           MIX_ENV: test
