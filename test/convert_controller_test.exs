@@ -1,13 +1,13 @@
-defmodule Spintria.ConvertControllerTest do
+defmodule Denarius.ConvertControllerTest do
   use ExUnit.Case, async: true
   use Plug.Test
 
   import Mox
 
   alias Ecto.Adapters.SQL.Sandbox
-  alias Spintria.Router
-  alias Spintria.Repo
-  alias Spintria.Utils.Clock
+  alias Denarius.Router
+  alias Denarius.Repo
+  alias Denarius.Utils.Clock
 
   Sandbox.mode(Repo, :manual)
 
@@ -29,7 +29,7 @@ defmodule Spintria.ConvertControllerTest do
       user_id: 1
     }
 
-    Spintria.Exchange.MockClient
+    Denarius.Exchange.MockClient
     |> expect(:get, fn _, _ ->
       {:ok,
        %{
@@ -67,7 +67,7 @@ defmodule Spintria.ConvertControllerTest do
       user_id: 1
     }
 
-    Spintria.Exchange.MockClient
+    Denarius.Exchange.MockClient
     |> expect(:get, fn _, _ ->
       {:ok,
        %{

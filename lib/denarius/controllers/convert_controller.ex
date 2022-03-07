@@ -1,10 +1,10 @@
-defmodule Spintria.Controller.ConvertController do
+defmodule Denarius.Controller.ConvertController do
   import Plug.Conn
 
-  alias Spintria.Schema.Transaction
-  alias Spintria.Utils.Clock
+  alias Denarius.Schema.Transaction
+  alias Denarius.Utils.Clock
 
-  @exchange_api Application.compile_env!(:spintria, :exchange_api)
+  @exchange_api Application.compile_env!(:denarius, :exchange_api)
 
   @doc """
   Convert an amount of a certain currency to other currency
@@ -47,7 +47,7 @@ defmodule Spintria.Controller.ConvertController do
       :rate => rate
     }
 
-    Spintria.Repo.insert!(transaction)
+    Denarius.Repo.insert!(transaction)
 
     send_resp(conn, 200, Jason.encode!(data))
   end

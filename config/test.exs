@@ -1,11 +1,11 @@
 import Config
 
-config :spintria, Spintria.Repo,
-  database: "spintria_test",
-  username: "spintria",
-  password: "spintria",
+config :denarius, Denarius.Repo,
+  database: "denarius_test",
+  username: "denarius",
+  password: "denarius",
   hostname: "localhost",
   show_sensitive_data_on_connection_error: true,
   pool: Ecto.Adapters.SQL.Sandbox
 
-config :spintria, :exchange_api, Spintria.Exchange.MockClient
+config :denarius, :exchange_api, Denarius.Exchange.MockClient

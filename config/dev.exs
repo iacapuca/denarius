@@ -1,5 +1,5 @@
 import Config
 
-config :spintria, :exchange_api, Spintria.Exchange.Client
+config :denarius, :exchange_api, Denarius.Exchange.Client
 
 import_config "dev.secret.exs"

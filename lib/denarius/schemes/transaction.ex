@@ -1,4 +1,4 @@
-defmodule Spintria.Schema.Transaction do
+defmodule Denarius.Schema.Transaction do
   use Ecto.Schema
   import Ecto.Changeset
 

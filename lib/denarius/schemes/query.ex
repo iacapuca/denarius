@@ -1,4 +1,4 @@
-defmodule Spintria.Schema.Query do
+defmodule Denarius.Schema.Query do
   use Ecto.Schema
 
   import Ecto.Changeset
@@ -11,7 +11,7 @@ defmodule Spintria.Schema.Query do
   end
 
   def changeset(attrs) do
-    %Spintria.Schema.Query{}
+    %Denarius.Schema.Query{}
     |> cast(attrs, [:from, :to, :amount, :user_id])
     |> validate_required([:user_id, :from, :to, :amount])
   end

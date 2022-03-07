@@ -1,4 +1,4 @@
-defmodule Spintria.Repo.Migrations.TransactionHistory do
+defmodule Denarius.Repo.Migrations.TransactionHistory do
   use Ecto.Migration
 
   def change do

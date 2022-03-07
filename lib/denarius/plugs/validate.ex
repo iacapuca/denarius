@@ -1,4 +1,4 @@
-defmodule Spintria.Plug.ValidatePlug do
+defmodule Denarius.Plug.ValidatePlug do
   use Plug.Builder
 
   import Ecto.Changeset
@@ -10,7 +10,7 @@ defmodule Spintria.Plug.ValidatePlug do
     if path in opts[:paths] do
       conn = Plug.Conn.fetch_query_params(conn)
 
-      case Spintria.Schema.Query.validate_params(conn.query_params) do
+      case Denarius.Schema.Query.validate_params(conn.query_params) do
         {:ok, attrs} ->
           conn
           |> assign(:attrs, attrs)

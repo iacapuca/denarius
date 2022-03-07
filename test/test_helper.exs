@@ -1,2 +1,2 @@
-Mox.defmock(Spintria.Exchange.MockClient, for: Spintria.Exchange.ClientBehavior)
+Mox.defmock(Denarius.Exchange.MockClient, for: Denarius.Exchange.ClientBehavior)
 ExUnit.start()

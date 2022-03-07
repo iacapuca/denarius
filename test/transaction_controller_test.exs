@@ -1,11 +1,11 @@
-defmodule Spintria.TransactionControllerTest do
+defmodule Denarius.TransactionControllerTest do
   use ExUnit.Case, async: true
   use Plug.Test
 
   alias Ecto.Adapters.SQL.Sandbox
-  alias Spintria.Router
-  alias Spintria.Schema.Transaction
-  alias Spintria.Repo
+  alias Denarius.Router
+  alias Denarius.Schema.Transaction
+  alias Denarius.Repo
 
   Sandbox.mode(Repo, :manual)
 

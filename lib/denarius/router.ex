@@ -1,10 +1,10 @@
-defmodule Spintria.Router do
+defmodule Denarius.Router do
   use Plug.Router
   use Plug.ErrorHandler
 
-  alias Spintria.Plug.ValidatePlug
-  alias Spintria.Controller.ConvertController
-  alias Spintria.Controller.TransactionController
+  alias Denarius.Plug.ValidatePlug
+  alias Denarius.Controller.ConvertController
+  alias Denarius.Controller.TransactionController
 
   plug(Plug.Logger, log: :debug)
   plug(ValidatePlug, paths: ["/convert"])

@@ -1,9 +1,9 @@
-defmodule Spintria.MixProject do
+defmodule Denarius.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :spintria,
+      app: :denarius,
       version: "0.1.0",
       elixir: "~> 1.13",
       build_embedded: Mix.env() == :prod,
@@ -16,7 +16,7 @@ defmodule Spintria.MixProject do
   def application do
     [
       extra_applications: [:logger],
-      mod: {Spintria.Application, []}
+      mod: {Denarius.Application, []}
     ]
   end
 

@@ -1,8 +1,8 @@
-defmodule Spintria.Controller.TransactionController do
+defmodule Denarius.Controller.TransactionController do
   import Plug.Conn
 
-  alias Spintria.Schema.Transaction
-  alias Spintria.Repo
+  alias Denarius.Schema.Transaction
+  alias Denarius.Repo
   import Ecto.Query
 
   @derive Jason.Encoder

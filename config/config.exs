@@ -1,7 +1,7 @@
 import Config
 
-config :spintria,
-  ecto_repos: [Spintria.Repo]
+config :denarius,
+  ecto_repos: [Denarius.Repo]
 
 config :tesla, adapter: Tesla.Adapter.Hackney
 

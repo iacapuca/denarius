@@ -1,4 +1,4 @@
-defmodule Spintria.Utils.Clock do
+defmodule Denarius.Utils.Clock do
   def utc_now do
     Process.get(:mock_utc_now) || DateTime.utc_now()
   end

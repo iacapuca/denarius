@@ -1,2 +1,2 @@
-defmodule Spintria do
+defmodule Denarius do
 end
