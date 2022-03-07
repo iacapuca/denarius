@@ -28,4 +28,4 @@ jobs:
       - name: Fetch deps
         run: mix deps.get
       - name: => Check Format
-        run: mix format --check-formated
+        run: mix format --check-formatted
