@@ -42,17 +42,19 @@ TODO: running commands inside the container and applications will be runing at p
     - /transactions
 
 ```json
-transactions: [
-  {
-    "amount": 531,
-    "from": "EUR",
-    "inserted_at": "2022-03-07T07:13:47",
-    "rate": 1.087423,
-    "to": "USD",
-    "transaction_id": "fdb72efc-ebae-4f9d-b176-0f2b6dce7e45",
-    "user_id": 1
-  }
-]
+{
+  "transactions": [
+    {
+      "amount": 531,
+      "from": "EUR",
+      "inserted_at": "2022-03-07T07:13:47",
+      "rate": 1.087423,
+      "to": "USD",
+      "transaction_id": "fdb72efc-ebae-4f9d-b176-0f2b6dce7e45",
+      "user_id": 1
+    }
+  ]
+}
 ```
 
 - Fetch all transactions by user_id
@@ -60,17 +62,19 @@ transactions: [
     - /transactions/{user_id}
 
 ```json
-transactions: [
-  {
-    "amount": 531,
-    "from": "EUR",
-    "inserted_at": "2022-03-07T07:13:47",
-    "rate": 1.087423,
-    "to": "USD",
-    "transaction_id": "fdb72efc-ebae-4f9d-b176-0f2b6dce7e45",
-    "user_id": 1
-  }
-]
+{
+  "transactions": [
+    {
+      "amount": 531,
+      "from": "EUR",
+      "inserted_at": "2022-03-07T07:13:47",
+      "rate": 1.087423,
+      "to": "USD",
+      "transaction_id": "fdb72efc-ebae-4f9d-b176-0f2b6dce7e45",
+      "user_id": 1
+    }
+  ]
+}
 ```
 
 - Convert currencies
