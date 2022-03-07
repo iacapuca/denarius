@@ -3,29 +3,17 @@ name: CI
 on: push
 
 jobs:
-  check_format:
+  build:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        otp-version: [24.0]
+        elixir-version: [1.13.0]
     steps:
       - uses: actions/checkout@v2
       - uses: erlef/setup-beam@v1
         with:
-          otp-version: "24.0"
-          elixir-version: "1.13.0"
-      - uses: actions/cache@v2
-        env:
-          cache-name: cache-elixir-deps
-        with:
-          path: |
-            deps
-            _build
-
-          key: ${{runner.os}}-build-${{env.cache-name}}-${{ hashFiles('**/mix.lock')}}
-          restore-keys: |
-            ${{runner.os}}-build-${{env.cache-name}}
-            ${{runner.os}}-build-
-            ${{runner.os}}-
-
-      - name: Fetch deps
-        run: mix deps.get
-      - name: => Check Format
-        run: mix format --check-formatted
+          otp-version: ${{matrix.otp-version}}
+          elixir-version: ${{matrix.elixir-version}}
+      - run: mix deps.get
+      - run: mix test
