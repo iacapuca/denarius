@@ -1,7 +1,5 @@
 # Denarius
 
-[![Denarius CI](https://github.com/iacapuca/denarius/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/iacapuca/denarius/actions/workflows/ci.yml)
-
 The **denarius** (Latin: [[deːˈnaːriʊs]](https://en.wikipedia.org/wiki/Help:IPA/Latin "Help:IPA/Latin"), pl. **dēnāriī** [[deːˈnaːriiː]](https://en.wikipedia.org/wiki/Help:IPA/Latin "Help:IPA/Latin")) was the standard [Roman](https://en.wikipedia.org/wiki/Ancient_Rome "Ancient Rome") silver coin from its introduction in the [Second Punic War](https://en.wikipedia.org/wiki/Second_Punic_War "Second Punic War") c. 211 BC^[[1]](https://en.wikipedia.org/wiki/Denarius#cite_note-1)^ to the reign of [Gordian III](https://en.wikipedia.org/wiki/Gordian_III "Gordian III") (AD 238–244), when it was gradually replaced by the [Antoninianus](https://en.wikipedia.org/wiki/Antoninianus "Antoninianus"). It continued to be minted in very small quantities, likely for ceremonial purposes, until and through the [tetrarchy](https://en.wikipedia.org/wiki/Tetrarchy "Tetrarchy") (293–313). ^[[2]](https://en.wikipedia.org/wiki/Denarius#cite_note-2)^ ^: 87 ^
 
 The word _dēnārius_ is derived from the [Latin](https://en.wikipedia.org/wiki/Latin "Latin") _dēnī_ "containing ten", as its value was originally of 10 [assēs](<https://en.wikipedia.org/wiki/As_(coin)>) "As (coin)").^[[note 1]](https://en.wikipedia.org/wiki/Denarius#cite_note-3)^ The word for "money" descends from it in Italian ( _denaro_ ), Slovene ( _denar_ ), Portuguese ( _dinheiro_ ), and Spanish ( _dinero_ ). Its name also survives in the [dinar](https://en.wikipedia.org/wiki/Dinar "Dinar") currency.
@@ -12,8 +10,15 @@ Its symbol is represented in [Unicode](https://en.wikipedia.org/wiki/Unicode "Un
 
 To be able to run **Denarius** you will need to have **Docker** installed on your machine, the instructions to install Docker can be found [here
 ](https://docs.docker.com/engine/install/)Docker compose is also **required**[
-](https://docs.docker.com/engine/install/)After installing Docker you will also need a **.env** file and **dev.secret.exs** files which store the env variables needed by the applications
+](https://docs.docker.com/engine/install/)After installing Docker you will also need a **.env** file which store the env variables needed by the applications
 A token to the[ ](https://docs.docker.com/engine/install/)[exchangeratesapi](https://exchangeratesapi.io/) is needed, so you will need to register and request a token.
+
+## Environment Variables
+
+```
+EXCHANGERATE_API_TOKEN=####
+DATABASE_URL=postgres://denarius:denarius@db:5432/denarius_dev
+```
 
 ## How to run
 
@@ -34,8 +39,6 @@ Run the docker compose command
 ```
 docker compose up
 ```
-
-TODO: running commands inside the container and applications will be runing at port 4040
 
 ## Endpoints
 
