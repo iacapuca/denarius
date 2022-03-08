@@ -1,4 +1,7 @@
 defmodule Denarius.Schema.Transaction do
+  @moduledoc """
+  Provides an Ecto Schema to the Transaction model
+  """
   use Ecto.Schema
   import Ecto.Changeset
 

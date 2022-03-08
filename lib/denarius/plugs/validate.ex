@@ -1,7 +1,12 @@
 defmodule Denarius.Plug.ValidatePlug do
+  @moduledoc """
+  Provides a Plug that validates incoming requests to the convert route
+  """
   use Plug.Builder
 
   import Ecto.Changeset
+
+  alias Denarius.Schema.Query
 
   def init(options), do: options
 
@@ -10,7 +15,7 @@ defmodule Denarius.Plug.ValidatePlug do
     if path in opts[:paths] do
       conn = Plug.Conn.fetch_query_params(conn)
 
-      case Denarius.Schema.Query.validate_params(conn.query_params) do
+      case Query.validate_params(conn.query_params) do
         {:ok, attrs} ->
           conn
           |> assign(:attrs, attrs)

@@ -2,10 +2,10 @@ defmodule Denarius.TransactionControllerTest do
   use ExUnit.Case, async: true
   use Plug.Test
 
-  alias Ecto.Adapters.SQL.Sandbox
+  alias Denarius.Repo
   alias Denarius.Router
   alias Denarius.Schema.Transaction
-  alias Denarius.Repo
+  alias Ecto.Adapters.SQL.Sandbox
 
   Sandbox.mode(Repo, :manual)
 
