@@ -1,9 +1,9 @@
 defmodule Denarius.Controller.TransactionController do
+  import Ecto.Query
   import Plug.Conn
 
-  alias Denarius.Schema.Transaction
   alias Denarius.Repo
-  import Ecto.Query
+  alias Denarius.Schema.Transaction
 
   @derive Jason.Encoder
   defimpl Jason.Encoder, for: Transaction do

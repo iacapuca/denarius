@@ -1,9 +1,15 @@
 defmodule Denarius.Exchange.ClientBehavior do
+  @moduledoc """
+  Defines Behaviors of the Exchange Rate API Client
+  """
   @callback new(token :: String.t()) :: Tesla.Client.t()
   @callback get(url :: String.t(), opts :: List.t()) :: {:error, any} | {:ok, Tesla.Env.t()}
 end
 
 defmodule Denarius.Exchange.Client do
+  @moduledoc """
+  Provides a Client to the Exchange Rate API
+  """
   @adapter Tesla.Adapter.Hackney
   @behaviour Denarius.Exchange.ClientBehavior
 

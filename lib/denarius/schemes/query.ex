@@ -1,4 +1,7 @@
 defmodule Denarius.Schema.Query do
+  @moduledoc """
+  Provides an Embedded Ecto Schema to convert queries, so they can be validated by `changeset/1`
+  """
   use Ecto.Schema
 
   import Ecto.Changeset

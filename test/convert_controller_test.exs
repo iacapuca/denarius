@@ -4,10 +4,10 @@ defmodule Denarius.ConvertControllerTest do
 
   import Mox
 
-  alias Ecto.Adapters.SQL.Sandbox
-  alias Denarius.Router
   alias Denarius.Repo
+  alias Denarius.Router
   alias Denarius.Utils.Clock
+  alias Ecto.Adapters.SQL.Sandbox
 
   Sandbox.mode(Repo, :manual)
 

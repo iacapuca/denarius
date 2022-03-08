@@ -2,9 +2,9 @@ defmodule Denarius.Router do
   use Plug.Router
   use Plug.ErrorHandler
 
-  alias Denarius.Plug.ValidatePlug
   alias Denarius.Controller.ConvertController
   alias Denarius.Controller.TransactionController
+  alias Denarius.Plug.ValidatePlug
 
   plug(Plug.Logger, log: :debug)
   plug(ValidatePlug, paths: ["/convert"])
