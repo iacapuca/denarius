@@ -3,8 +3,8 @@ services:
   db:
     environment:
       PGDATA: /var/lib/postgresql/data/pgdata
-      POSTGRES_PASSWORD: denarius
       POSTGRES_USER: denarius
+      POSTGRES_PASSWORD: denarius
       POSTGRES_HOST_AUTH_METHOD: trust
     image: "postgres:13-alpine"
     ports:
@@ -12,5 +12,25 @@ services:
     restart: always
     volumes:
       - "pgdata:/var/lib/postgresql/data"
+
+  denarius:
+    build: .
+    command: /bin/bash entrypoint.sh
+    environment:
+      POSTGRES_USER: denarius
+      POSTGRES_PASSWORD: denarius
+      POSTGRES_DATABASE: denarius_dev
+      PGPORT: 5432
+      PGHOST: db
+      MIX_ENV: dev
+      DATABASE_URL: ${DATABASE_URL}
+      EXCHANGERATE_API_TOKEN: ${EXCHANGERATE_API_TOKEN}
+    ports:
+      - "4040:4040"
+    volumes:
+      - .:/app
+    depends_on:
+      - db
+
 volumes:
   pgdata:

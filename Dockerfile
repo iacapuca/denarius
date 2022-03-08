@@ -1,8 +1,20 @@
-FROM bitwalker/alpine-elixir-phoenix:latest
+FROM elixir:1.13 AS build
 
-WORKDIR /app
+RUN apt-get update && \
+  apt-get install -y postgresql-client
 
-COPY mix.exs .
-COPY mix.lock .
 
-CMD mix deps.get && mix run --no-halt
+RUN mix local.hex --force \
+    && mix local.rebar --force
+
+ENV APP_HOME /denarius
+RUN mkdir -p $APP_HOME
+WORKDIR $APP_HOME
+
+COPY mix.exs mix.lock ./
+RUN mix do deps.get, deps.compile
+COPY . .
+
+EXPOSE 4040
+
+CMD ["mix run --no-halt"]
